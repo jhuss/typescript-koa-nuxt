@@ -1,0 +1,23 @@
+{
+  "name": "cucullata",
+  "version": "0.0.1",
+  "description": "webapp email client",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "author": "Jesus Jerez",
+  "license": "MIT",
+  "dependencies": {
+    "nuxt": "^2.3.2",
+    "nuxt-class-component": "^1.2.1",
+    "vue-property-decorator": "^7.2.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^5.3.0",
+    "typescript": "^3.1.6"
+  }
+}
