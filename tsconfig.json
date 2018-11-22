@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": [
       "dom",
       "es2015"
     ],
     "module": "es2015",
     "moduleResolution": "node",
+    "sourceMap": true,
     "experimentalDecorators": true,
     "noImplicitAny": false,
     "noImplicitThis": false,
@@ -18,13 +19,10 @@
     "baseUrl": "./src",
     "paths": {
       "~/": ["./"],
-      "~/assets/*": ["./assets/*"],
-      "~/components/*": ["./components/*"],
-      "~/middleware/*": ["./middleware/*"],
-      "~/pages/*": ["./pages/*"],
-      "~/plugins/*": ["./plugins/*"],
-      "~/static/*": ["./static/*"],
-      "~/store/*": ["./store/*"]
-    }
-  }
+      "~/client/*": ["./client/*"],
+      "~/server/*": ["./server/*"]
+    },
+    "outDir": "./dist"
+  },
+  "exclude": ["node_modules"]
 }

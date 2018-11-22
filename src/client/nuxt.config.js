@@ -1,6 +1,10 @@
-export default {
+module.exports = {
+  server: {
+    port: 8000,
+    host: 'localhost',
+  },
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:8000'
   },
   head: {
     title: 'starter',
@@ -10,6 +14,9 @@ export default {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
   },
-  srcDir: 'src/',
-  modules: ['~/modules/typescript']
+  srcDir: 'src/client',
+  modules: ['~/modules/typescript'],
+  build: {
+    publicPath: 'public'
+  }
 }

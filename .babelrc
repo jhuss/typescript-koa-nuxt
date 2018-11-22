@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "@babel/typescript",
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "~/": "./src",
+          "~/client": "./src/client",
+          "~/server": "./src/server"
+        }
+      }
+    ]
+  ]
+}
