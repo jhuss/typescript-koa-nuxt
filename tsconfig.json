@@ -22,7 +22,7 @@
       "~/client/*": ["./client/*"],
       "~/server/*": ["./server/*"]
     },
-    "outDir": "./dist"
+    "outDir": "./out"
   },
   "exclude": ["node_modules"]
 }

@@ -9,7 +9,7 @@
     "nuxt-build": "nuxt build -c src/client/nuxt.config.js",
     "nuxt-start": "nuxt start -c src/client/nuxt.config.js",
     "nuxt-generate": "nuxt generate -c src/client/nuxt.config.js",
-    "dist-build": "npm run nuxt-generate && webpack --mode=production --config webpack.config.js",
+    "dist-build": "npm run nuxt-generate && webpack --env.NODE_ENV=production --config webpack.config.js",
     "dist-serve": "cross-env NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
