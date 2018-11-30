@@ -1,6 +1,7 @@
 .idea/
 .nuxt/
 out/
+build/
 dist/
 node_modules/
 package-lock.json

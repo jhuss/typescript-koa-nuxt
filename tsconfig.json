@@ -18,7 +18,8 @@
     "allowJs": true,
     "baseUrl": "./src",
     "paths": {
-      "~/": ["./"],
+      "root~/*": ["../*"],
+      "~/*": ["./*"],
       "~/client/*": ["./client/*"],
       "~/server/*": ["./server/*"]
     },

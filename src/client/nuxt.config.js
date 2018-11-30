@@ -1,4 +1,4 @@
-module.exports = {
+const nuxtConfig = {
   server: {
     port: 8000,
     host: 'localhost',
@@ -14,9 +14,13 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
   },
-  srcDir: 'src/client',
-  modules: ['~/modules/typescript'],
-  build: {
+  srcDir: 'src/client'
+}
+
+if (process.env.NODE_ENV === 'production') {
+  nuxtConfig.build = {
     publicPath: 'public'
   }
 }
+
+module.exports = nuxtConfig

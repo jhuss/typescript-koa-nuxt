@@ -1,6 +1,5 @@
 {
   "presets": [
-    "@babel/typescript",
     [
       "@babel/env",
       {
@@ -16,6 +15,7 @@
       {
         "root": ["./src"],
         "alias": {
+          "root~": "./",
           "~/": "./src",
           "~/client": "./src/client",
           "~/server": "./src/server"
