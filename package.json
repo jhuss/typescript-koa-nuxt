@@ -5,7 +5,7 @@
   "license": "MIT",
   "version": "0.0.1",
   "scripts": {
-    "dev": "webpack --config webpack.config.js && node build/dev.js",
+    "dev": "webpack --watch --config webpack.config.js",
     "nuxt-dev": "nuxt -c src/client/nuxt.config.js",
     "nuxt-build": "nuxt build -c src/client/nuxt.config.js",
     "nuxt-start": "nuxt start -c src/client/nuxt.config.js",
@@ -33,6 +33,7 @@
     "babel-loader": "^8.0.4",
     "babel-plugin-module-resolver": "^3.1.1",
     "cross-env": "^5.2.0",
+    "nodemon-webpack-plugin": "^4.0.6",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^5.3.1",
     "typescript": "^3.1.6",
