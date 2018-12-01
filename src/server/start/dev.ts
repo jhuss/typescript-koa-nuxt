@@ -1,4 +1,4 @@
-import {Consola, Nuxt, Builder, Generator, port, host, app, statics, router} from '~/server/index'
+import {Http2, htt2Options, Consola, Nuxt, Builder, Generator, port, host, app, statics, router} from '~/server/index'
 const path = require('path')
 
 let config: any = require('~/client/nuxt.config')
@@ -28,11 +28,18 @@ async function startDev() {
     await nuxt.render(ctx.req, ctx.res)
   })
 
-  app.listen(port, host)
-  Consola.ready({
-    message: `Server listening on http://${host}:${port}`,
-    badge: true
-  })
+  Http2
+    .createSecureServer(htt2Options, app.callback())
+    .listen(port, host, (err) => {
+      if (err) {
+        throw new Error(err)
+      }
+
+      Consola.ready({
+        message: `Server listening on https://${host}:${port}`,
+        badge: true
+      })
+    })
 }
 
 startDev()
