@@ -1,11 +1,15 @@
+const settings = require('../../settings')
+const appSettings = settings.getSettings()
+
 const nuxtConfig = {
   server: {
-    port: 8000,
-    host: 'localhost',
+    port: appSettings.server.port,
+    host: appSettings.server.hostname,
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'https://localhost:8000'
+    baseUrl: appSettings.server.baseUrl
   },
+  dev: true,
   head: {
     title: 'starter',
     meta: [
@@ -17,10 +21,11 @@ const nuxtConfig = {
   srcDir: 'src/client'
 }
 
-if (process.env.NODE_ENV === 'production') {
+if (settings.isProdEnv()) {
   nuxtConfig.build = {
     publicPath: 'public'
   }
+  nuxtConfig.dev = false
 }
 
 module.exports = nuxtConfig

@@ -25,5 +25,13 @@
     },
     "outDir": "./out"
   },
-  "exclude": ["node_modules"]
+  "exclude": [
+    ".nuxt",
+    "build",
+    "cert",
+    "config",
+    "dist",
+    "node_modules",
+    "out"
+  ]
 }

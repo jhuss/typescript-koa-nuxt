@@ -10,7 +10,7 @@
     "nuxt-build": "nuxt build -c src/client/nuxt.config.js",
     "nuxt-start": "nuxt start -c src/client/nuxt.config.js",
     "nuxt-generate": "nuxt generate -c src/client/nuxt.config.js",
-    "dist-build": "npm run nuxt-generate && webpack --env.NODE_ENV=production --config webpack.config.js",
+    "dist-build": "npm run nuxt-generate && cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dist-serve": "cross-env NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
@@ -19,7 +19,8 @@
     "koa-static": "^5.0.0",
     "nuxt": "^2.3.2",
     "nuxt-class-component": "^1.2.1",
-    "vue-property-decorator": "^7.2.0"
+    "vue-property-decorator": "^7.2.0",
+    "consola": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -35,6 +36,7 @@
     "cross-env": "^5.2.0",
     "nodemon-webpack-plugin": "^4.0.6",
     "source-map-loader": "^0.2.4",
+    "toml": "^2.3.3",
     "ts-loader": "^5.3.1",
     "typescript": "^3.1.6",
     "webpack": "^4.26.1",

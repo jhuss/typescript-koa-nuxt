@@ -1,0 +1,8 @@
+[server]
+hostname="localhost"
+port=8000
+# baseUrl="https://localhost:8000"
+
+[server.ssl]
+key="cert/server.key"
+cert="cert/server.crt"

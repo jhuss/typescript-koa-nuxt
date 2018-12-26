@@ -1,8 +1,6 @@
-import {Http2, htt2Options, Consola, Nuxt, Builder, Generator, port, host, app, statics, router} from '~/server/index'
 const path = require('path')
-
-let config: any = require('~/client/nuxt.config')
-config.dev = true
+const nuxtConfig: any = require('~/client/nuxt.config')
+import {Http2, htt2Options, Consola, Nuxt, Builder, Generator, app, appSettings, statics, router} from '~/server/index'
 
 async function startDev() {
   app.use(async (ctx, next) => {
@@ -12,11 +10,11 @@ async function startDev() {
   app.use(statics(path.resolve('build')))
 
   // nuxt
-  const nuxt = new Nuxt(config)
+  const nuxt = new Nuxt(nuxtConfig)
   const builder = new Builder(nuxt)
   builder.build()
 
-  // if (config.mode === 'spa') {
+  // if (nuxtConfig.mode === 'spa') {
   //   const generator = new Generator(nuxt, builder)
   //   await generator.generate()
   // }
@@ -30,13 +28,13 @@ async function startDev() {
 
   Http2
     .createSecureServer(htt2Options, app.callback())
-    .listen(port, host, (err) => {
+    .listen(appSettings.server.port, appSettings.server.hostname, (err) => {
       if (err) {
         throw new Error(err)
       }
 
       Consola.ready({
-        message: `Server listening on https://${host}:${port}`,
+        message: `Server listening on https://${appSettings.server.hostname}:${appSettings.server.port}`,
         badge: true
       })
     })
